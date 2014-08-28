@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html ng-app = "contacts">
+<head>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/style.css" />
+	<script type="text/javascript" src="./libs/angular.min.js"></script>
+	<script type="text/javascript" src="./libs/observable.js"></script>
+	<script type="text/javascript" src="./model/contact.js"></script>
+	<script type="text/javascript" src="./model/contacts.js"></script>
+	<!-- script type="text/javascript" src="./view/view.js"></script>
+	<script type="text/javascript" src="./controller/controller.js"></script-->
+	<script type="text/javascript" src="./controller/app.js"></script>
+	<!-- script type="text/javascript" src="launcher.js"></script -->
+	<title>Gestion de contacts</title>
+</head>
+<body  ng-controller="PanelController as panel">
+	<div id="titre" class="container-fluid">
+		<h1 ng-show="panel.isSelected(1)">Liste des Contacts</h1>
+		<h1 ng-show="panel.isSelected(2)">Ajouter un Contact</h1>
+	<div class="container-fluid">
+		<ul class="nav nav-pills">
+			<li ng-class="{ active: panel.isSelected(1) }">
+				<a href ng-click="panel.selectTab(1)">Liste</a>
+			</li>
+			<li ng-class="{ active: panel.isSelected(2) }">
+				<a href ng-click="panel.selectTab(2)">Ajouter</a>
+			</li>
+		</ul>
+	</div>
+	<div class="container-fluid" ng-show="panel.isSelected(1)" id="divListeContacts">
+		<p></p>
+		<div ng-controller="ListeController as listeCtrl">
+			<div class="container-fluid">
+				<ul class="list-inline">
+					<li>Tri</li>
+					<li><a href ng-click="listeCtrl.filtrer(1)">A-Z</a></li>
+					<li><a href ng-click="listeCtrl.filtrer(2)">Z-A</a></li>
+				</ul>
+			</div>
+			<ul class="list-inline">
+			<li class=" align-top" ng-repeat="c in listeCtrl.listeContacts | orderBy:listeCtrl.filtre"> 
+				<div><img src="./ressources/Minecraft-steve_12.png" class="img-thumbnail"></div>
+				<h4>{{c.getPrenom()}} {{c.getNom()}}</h4>
+				<div>{{c.getTel() || " "}}</div>
+				<div><a ng-href="mailto:{{c.getEmail()}}">{{c.getEmail() || " "}}</a></div>
+				<div>{{"" || c.getBirthdate().getDay()+" "+(c.getBirthdate().getMonth())+" "+c.getBirthdate().getFullYear()}}</div>
+			</li>
+			</ul>
+		</div>	
+	</div>
+	<div class="container" ng-show="panel.isSelected(2)" id="ajouterContact">
+	<p></p>
+		<div ng-controller="AddContactController as acCtrl" >
+			<form 	name="addContactForm" 
+					ng-submit=" acCtrl.addContact() && panel.selectTab(1) " 
+					novalidate> 
+				<div class="form-group" ng-class="{ 'has-error' : addContactForm.nom.$invalid }">
+   					<label for="nom" class="col-sm-2 control-label ">Nom</label>
+    				<div class="col-sm-10">
+    					<input type="text" class="form-control" id="nom" name="nom" placeholder="Enter lastname" 
+    							ng-model="acCtrl.contact.nom" required>
+    				</div>
+  				</div>
+  				<div class="form-group" >
+  					<label for="prenom1" class="col-sm-2 control-label">Pr&eacute;nom</label>
+    				<div class="col-sm-10">
+    					<input type="text" class="form-control" id="prenom1" placeholder="Enter firstname" 
+    							ng-model="acCtrl.contact.prenom">
+    				</div>
+  				</div>
+  				<div class="form-group" ng-class="{ 'has-error' : addContactForm.email.$invalid }">
+    				<label for="Email1" class="col-sm-2 control-label">Email address</label>
+    				<div class="col-sm-10">
+    					<input type="email" class="form-control" id="email" name="email" placeholder="Enter email" 
+    							ng-model="acCtrl.contact.email" >
+    				</div>
+  				</div>
+  				<div class="form-group" >
+    				<label for="tel1" class="col-sm-2 control-label">T&eacute;l&eacute;phone</label>
+    				<div class="col-sm-10">
+    					<input type="tel" class="form-control" id="tel1" placeholder="Enter telephone number" 
+    							ng-model="acCtrl.contact.tel">
+    				</div>
+  				</div>
+  				<div class="form-group" >
+    				<label for="birth1" class="col-sm-2 control-label">Date de Naissance</label>
+    				<div class="col-sm-10">
+    					<input type="date" class="form-control" id="birth1" placeholder="Enter birthdate" 
+    							ng-model="acCtrl.contact.birthdate">
+    				</div>
+  				</div>
+  				<div class="col-sm-12"><input type="submit" class="btn btn-primary pull-right" value="Ajouter Contact"/></div>
+			</form>
+		</div>
+	</div>
+	<div class="container" ng-show="false" id="modifierContact">
+		<!-- Recuperer le code d'au dessus -->
+	</div>
+</body>
+</html>

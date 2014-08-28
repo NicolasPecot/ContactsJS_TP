@@ -1,0 +1,5 @@
+- Elaguer le code HTML (virer les doublons mis là pour l'exemple)
+- Factoriser Edition et Ajout de contact
+- Coller les subdivisions dans des fichiers séparés (liste de contacts et ajout/edition)
+- Faire le code JS de base (classic MVC w/o JQuery)
+- Passer en AngularJS si possible (en plus ça risque de simplifier le code par contre ça fait plus tellement MVC)
