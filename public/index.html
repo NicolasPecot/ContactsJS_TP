@@ -44,7 +44,7 @@
                 <h4>{{c.getPrenom()}} {{c.getNom()}}</h4>
                 <div>{{c.getTel() || " "}}</div>
                 <div><a ng-href="mailto:{{c.getEmail()}}">{{c.getEmail() || " "}}</a></div>
-                <div>{{"" || c.getBirthdate().getDay()+" "+(c.getBirthdate().getMonth())+" "+c.getBirthdate().getFullYear()}}</div>
+                <div>{{"" || c.getBirthdate().getDay().toString() + " / " + (c.getBirthdate().getMonth() + 1).toString() + " / " + c.getBirthdate().getFullYear().toString()}}</div>
             </li>
             </ul>
         </div>

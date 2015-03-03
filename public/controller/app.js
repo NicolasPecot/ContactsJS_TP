@@ -1,3 +1,5 @@
+/*jslint globals angular*/
+
 (function(){
 	var app = angular.module('contacts', []);
 
@@ -12,6 +14,7 @@
 			var contacts = new Contacts();
 			console.log(contacts.loadLocalStorage());
 			return contacts;
+            // transformer les chaines de char en Date puis en chaines formatées !!!
 		}();
 		this.selectTab = function(setTab){
 			$scope.tab = setTab;
