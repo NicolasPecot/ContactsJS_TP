@@ -1,12 +1,16 @@
-function Observable(){
-	this.observers = [];
+function Observable() {
+    'use strict';
+    this.observers = [];
 }
 
-Observable.prototype.attachObserver = function(obs){
-	this.observers.push(obs);
+Observable.prototype.attachObserver = function (obs) {
+    'use strict';
+    this.observers.push(obs);
 };
-Observable.prototype.notify = function(obj, msg){
-	for (var obs in this.observers){
-			this.observers[obs].update(obj, msg);
-	}
+Observable.prototype.notify = function (obj, msg) {
+    'use strict';
+    var obs;
+    for (obs in this.observers) {
+        this.observers[obs].update(obj, msg);
+    }
 };

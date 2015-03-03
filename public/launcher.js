@@ -1,11 +1,10 @@
-/*global Contacts*/
+/*global Contacts, View, Controller*/
 
 (function () {
     'use strict';
-	var m = new Contacts(); // modele
-	var view = new View(m);
-	var controller = new Controller(m, view);
-
-	view.attachObserver(controller);
-	m.attachObserver(view);
+    var m = new Contacts(),
+        view = new View(m),
+        controller = new Controller(m, view);
+    view.attachObserver(controller);
+    m.attachObserver(view);
 })();
