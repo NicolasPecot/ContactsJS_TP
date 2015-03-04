@@ -1,4 +1,15 @@
 {
-  "name": "application-name",
-  "version": "0.0.1"
+  "name": "ContactsJS",
+  "version": "0.0.1",
+  "description": "A little webapp to manage contacts.",
+  "author": "Nicolas Pecot <nicolas.pecot@gmail.com>",
+  "repository": {"type": "git", "url": "git@github.com:NicolasPecot/ContactsJS_TP.git"},
+  "main": "server.js",
+  "dependencies": {
+    "express": "*",
+    "winston": "*",
+    "mongoose": "*",
+    "async": "*",
+    "sinon": "*"
+  }
 }
