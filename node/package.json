@@ -10,6 +10,7 @@
     "winston": "*",
     "mongoose": "*",
     "async": "*",
+    "mocha": "*",
     "sinon": "*"
   }
 }
