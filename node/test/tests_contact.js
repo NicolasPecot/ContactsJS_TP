@@ -2,7 +2,7 @@
  * Created by Shadow on 05/03/2015.
  */
 
-var contact = require('../Contact.js'),
+var contact = require('../contact.js'),
     assert = require('assert');
 
 describe('Tests des fonctionnalités de Contact', function () {
