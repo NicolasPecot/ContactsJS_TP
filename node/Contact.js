@@ -44,9 +44,13 @@
         this.prenom = prenom;
     };
     Contact.prototype.setTel = function (tel) {
-        var reg = new RegExp('[0-9]*');
-        if (tel.length === 10 && reg.test(tel)) {
+        var regPhone, reg = new RegExp('/[0-9]*');
+        regPhone = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+        if (tel.length === 10 && tel.match(regPhone)) {
             this.tel = tel;
+            return true;
+        } else {
+            return false;
         }
     };
     Contact.prototype.setEmail = function (email) {

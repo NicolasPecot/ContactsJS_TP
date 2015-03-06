@@ -5,8 +5,8 @@
     'use strict';
 
     var express = require('express'),
-        contact = require('./contact'),
-        contacts = require('./contacts'),
+        contact = require('./Contact'),
+        contacts = require('./Contacts'),
         app = express(),
         server;
 
