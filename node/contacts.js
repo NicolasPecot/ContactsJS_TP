@@ -19,7 +19,17 @@
     };
     Contacts.prototype.removeContact = function (contact) {
         'use strict';
-        return this.tabContacts.splice(this.tabContacts.indexOf(contact), 1);
+        var i;
+        if (this.tabContacts.indexOf(contact) !== -1) {
+            return this.tabContacts.splice(this.tabContacts.indexOf(contact), 1);
+        } else {
+            for (i in this.tabContacts) {
+                if (this.tabContacts[i].ident === contact.ident) {
+                    return this.tabContacts.splice(i, 1);
+                }
+            }
+            return false;
+        }
     };
     Contacts.prototype.changeContact = function (contact) {
         'use strict';

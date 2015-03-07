@@ -21,4 +21,41 @@ describe('Test des fonctionnalités de Contacts', function () {
             assert(1, contactsTests.addContact(contact));
         });
     });
+    describe('Test de suppression de contacts', function () {
+        before(function () {
+            contactsTests.tabContacts = [
+                {
+                    ident: 1,
+                    name: 'klhsdfj',
+                    tel:'01'
+                }, {
+                    ident: 2,
+                    name: 'lkjhsdfkhd',
+                    tel: '02'
+                }, {
+                    ident: 3,
+                    name: 'ldfjg',
+                    tel: '03'
+                }
+            ];
+        });
+        after(function () {
+            contactsTests.tabContacts = [];
+        });
+        it('suppression contact inexistant', function () {
+            var contactToDelete = {ident:4, name:'sjdhf', tel:'04'};
+
+            contactsTests.removeContact(contactToDelete);
+            assert.notEqual(2, contactsTests.tabContacts.length);
+        });
+        it('suppression contact existant', function () {
+            var contactToDelete = {
+                ident: 2,
+                name: 'lkjhsdfkhd',
+                tel: '02'
+            };
+            contactsTests.removeContact(contactToDelete);
+            assert.equal(2, contactsTests.tabContacts.length);
+        });
+    });
 });
