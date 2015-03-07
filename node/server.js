@@ -7,10 +7,11 @@
     var express = require('express'),
         contact = require('./contact'),
         contacts = require('./contacts'),
+        configuration = require('./configuration'),
         app = express(),
         server;
 
-    server = app.listen(9001, function () {});
+    server = app.listen(configuration.appPort, function () {});
 
     app.use(express.static('../public'));
 
