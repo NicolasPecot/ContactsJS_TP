@@ -15,6 +15,7 @@
     Contacts.prototype.addContact = function (contact) {
         'use strict';
         this.tabContacts.push(contact);
+        return this.tabContacts.length;
     };
     Contacts.prototype.removeContact = function (contact) {
         'use strict';
