@@ -7,15 +7,15 @@ var contact = require('../contact.js'),
 
 describe('Tests des fonctionnalités de Contact', function () {
     'use strict';
-    var contactTest = new Contact();
+    var contactTest = new contact();
 
     describe('Test de setIdent', function () {
-        it('should be equal', function () {
+        it('verif insertion id', function () {
             contactTest.setIdent('1');
             assert.equal('1', contactTest.ident);
             assert.notEqual('2', contactTest.ident);
         });
-        it('should not be equal', function () {
+        it('verif insertion id', function () {
             contactTest.setIdent('1');
             assert.notEqual('2', contactTest.ident);
         });
