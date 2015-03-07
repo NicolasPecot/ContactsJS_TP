@@ -58,4 +58,48 @@ describe('Test des fonctionnalités de Contacts', function () {
             assert.equal(2, contactsTests.tabContacts.length);
         });
     });
+    describe('Test de modification de contacts', function () {
+        before(function () {
+            contactsTests.tabContacts = [
+                {
+                    ident: 1,
+                    name: 'klhsdfj',
+                    tel:'01',
+                    getIdent: function () {return this.ident}
+                }, {
+                    ident: 2,
+                    name: 'lkjhsdfkhd',
+                    tel: '02',
+                    getIdent: function () {return this.ident}
+                }, {
+                    ident: 3,
+                    name: 'ldfjg',
+                    tel: '03',
+                    getIdent: function () {return this.ident}
+                }
+            ];
+        });
+        after(function () {
+            contactsTests.tabContacts = [];
+        });
+        it('modification contact inexistant', function () {
+            var contactToMod = {
+                ident: 4,
+                name: 'lhsgkf',
+                tel: '04',
+                getIdent: function () {return this.ident}
+            };
+            assert.equal(false, contactsTests.changeContact(contactToMod));
+        });
+        it('modification contact existant', function () {
+            var contactToMod = {
+                ident: 1,
+                name: 'bonjourconnard',
+                tel:'01',
+                getIdent: function () {return this.ident}
+            };
+            assert.equal(true, contactsTests.changeContact(contactToMod));
+            assert.equal('bonjourconnard', contactsTests.tabContacts[contactsTests.tabContacts.indexOf(contactToMod)].name);
+        });
+    });
 });

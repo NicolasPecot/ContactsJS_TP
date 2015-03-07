@@ -37,8 +37,10 @@
         for (c in this.tabContacts) {
             if (this.tabContacts[c].getIdent() === contact.getIdent()) {
                 this.tabContacts[c] = contact;
+                return true;
             }
         }
+        return false;
     };
 
     module.exports = Contacts;
