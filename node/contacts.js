@@ -43,5 +43,16 @@
         return false;
     };
 
+    Contacts.prototype.getContactById = function (id) {
+        'use strict';
+        var c;
+        for (c in this.tabContacts) {
+            if (this.tabContacts[c].ident === id) {
+                return this.tabContacts[c];
+            }
+        }
+        return false;
+    };
+
     module.exports = Contacts;
 })();

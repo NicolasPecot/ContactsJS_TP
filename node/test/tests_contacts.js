@@ -102,4 +102,35 @@ describe('Test des fonctionnalités de Contacts', function () {
             assert.equal('bonjourconnard', contactsTests.tabContacts[contactsTests.tabContacts.indexOf(contactToMod)].name);
         });
     });
+    describe('Test de récupération par l id', function () {
+        before(function () {
+            contactsTests.tabContacts = [
+                {
+                    ident: 1,
+                    name: 'klhsdfj',
+                    tel:'01',
+                    getIdent: function () {return this.ident}
+                }, {
+                    ident: 2,
+                    name: 'lkjhsdfkhd',
+                    tel: '02',
+                    getIdent: function () {return this.ident}
+                }, {
+                    ident: 3,
+                    name: 'ldfjg',
+                    tel: '03',
+                    getIdent: function () {return this.ident}
+                }
+            ];
+        });
+        after(function () {
+            contactsTests.tabContacts = [];
+        });
+        it('recup contact id non valide', function () {
+            assert.equal(false, contactsTests.getContactById(4));
+        });
+        it('recup contact id valide', function () {
+            assert.equal(1, contactsTests.getContactById(1).getIdent());
+        })
+    })
 });
