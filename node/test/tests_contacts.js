@@ -131,6 +131,6 @@ describe('Test des fonctionnalités de Contacts', function () {
         });
         it('recup contact id valide', function () {
             assert.equal(1, contactsTests.getContactById(1).getIdent());
-        })
-    })
+        });
+    });
 });

@@ -12,6 +12,7 @@
         server;
 
     server = app.listen(configuration.appPort, function () {});
+    configuration.init();
 
     app.use(express.static('../public'));
 

@@ -1,0 +1,22 @@
+<div class="container-fluid" ng-show="panel.isSelected(1)" id="divListeContacts">
+    <p></p>
+    <div ng-controller="ListeController as listeCtrl">
+        <div class="container-fluid">
+            <ul class="list-inline">
+                <li>Tri</li>
+                <li><a href ng-click="listeCtrl.filtrer(1)">A-Z</a></li>
+                <li><a href ng-click="listeCtrl.filtrer(2)">Z-A</a></li>
+            </ul>
+        </div>
+        <ul class="list-inline">
+            <li class=" align-top" ng-repeat="c in listeCtrl.listeContacts | orderBy:listeCtrl.filtre">
+                <div><img src="ressources/Minecraft-steve_12.png" class="img-thumbnail"></div>
+                <h4>{{c.getPrenom()}} {{c.getNom()}}</h4>
+                <div>{{c.getTel() || " "}}</div>
+                <div><a ng-href="mailto:{{c.getEmail()}}">{{c.getEmail() || " "}}</a></div>
+                <div>{{"" || c.birthDateToggled}}</div>
+                <!--c.getBirthdate().getDay().toString() + " / " + (c.getBirthdate().getMonth() + 1).toString() + " / " + c.getBirthdate().getFullYear().toString()}}</div>-->
+            </li>
+        </ul>
+    </div>
+</div>

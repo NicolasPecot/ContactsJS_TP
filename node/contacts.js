@@ -5,9 +5,9 @@
 
     var contact = require('./contact');
 
-    var Contacts = function () {
+    var Contacts = function (tabcontacts) {
         'use strict';
-        this.tabContacts = [];
+        this.tabContacts = tabcontacts || [];
     };
 
     Contacts.prototype.constructor = Contacts;
