@@ -54,5 +54,9 @@
         return false;
     };
 
+    Contacts.prototype.getContacts = function () {
+        return this.tabContacts;
+    };
+
     module.exports = Contacts;
 })();

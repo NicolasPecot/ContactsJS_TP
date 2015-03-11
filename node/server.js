@@ -19,5 +19,6 @@
     app.get('/', function (req, res) {
         res.status(200).send('Helloworld !');
     });
+    app.get('/contacts', contacts.getContacts());
 })();
 
