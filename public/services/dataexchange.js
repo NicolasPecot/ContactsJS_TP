@@ -1,8 +1,9 @@
 /**
  * Created by Shadow on 11/03/2015.
  */
-(function () {
+app.factory('dataExchange', ['$http', '$rootScope', function ($http, $rootScope) {
 
+    'use strict';
     var getContacts,
         addContact,
         deleteContact,
@@ -30,4 +31,4 @@
         "deleteContact": deleteContact,
         "modifyContact": modifyContact
     }
-})();
+}]);

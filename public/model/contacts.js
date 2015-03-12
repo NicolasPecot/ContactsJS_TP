@@ -70,3 +70,13 @@ Contacts.prototype.getListContacts = function () {
     };
     getContacts(successCallback, errorCallback);
 };
+Contact.prototype.deleteContact = function (contact) {
+    var successCallback, errorCallback;
+    successCallback = function (data) {
+        console.log('contact supprimé');
+    };
+    errorCallback = function (err) {
+        console.log(err);
+    };
+    deleteContact(contact, successCallback, errorCallback);
+}
