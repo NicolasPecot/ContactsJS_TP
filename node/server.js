@@ -5,8 +5,8 @@
     'use strict';
 
     var express = require('express'),
-        contact = require('./contact'),
-        contacts = require('./contacts'),
+        contact = require('./model/contact'),
+        contacts = require('./model/contacts'),
         configuration = require('./configuration'),
         app = express(),
         server;
@@ -16,10 +16,10 @@
 
     app.use(express.static('../public'));
 
-
-    app.get('/', function (req, res) {
-        res.status(200).send('Helloworld !');
+    app.route('/contacts').get(function (req, res) {
+        res.status(200).send(contacts.getContacts());
     });
-    app.get('/contacts', contacts.getContacts());
+
+    app.route('/getContactById/:idContact').get(contacts.getContactById);
 })();
 

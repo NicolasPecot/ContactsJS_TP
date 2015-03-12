@@ -1,4 +1,4 @@
-var contacts = require('../contacts.js'),
+var contacts = require('../model/contacts.js'),
     assert = require('assert');
 
 describe('Test des fonctionnalités de Contacts', function () {

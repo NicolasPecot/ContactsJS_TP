@@ -79,4 +79,4 @@ Contact.prototype.deleteContact = function (contact) {
         console.log(err);
     };
     deleteContact(contact, successCallback, errorCallback);
-}
+};
