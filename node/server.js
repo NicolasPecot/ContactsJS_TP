@@ -5,9 +5,11 @@
     'use strict';
 
     var express = require('express'),
+        winston = require('winston'),
         contact = require('./model/contact'),
         contacts = require('./model/contacts'),
         configuration = require('./configuration'),
+        routes = require('./routes'),
         app = express(),
         server;
 
@@ -16,10 +18,8 @@
 
     app.use(express.static('../public'));
 
-    app.route('/contacts').get(function (req, res) {
-        res.status(200).send(contacts.getContacts());
-    });
+    app.route('/contacts').get(routes.getContacts);
 
-    app.route('/getContactById/:idContact').get(contacts.getContactById);
+    app.route('/getContactById').get(routes.getContactById);
 })();
 

@@ -17,7 +17,7 @@
         this.tabContacts.push(contact);
         return this.tabContacts.length;
     };
-    Contacts.prototype.removeContact = function (contact) {
+    Contacts.prototype.removeContact = function (contact, callback) {
         'use strict';
         var i;
         if (this.tabContacts.indexOf(contact) !== -1) {
@@ -43,19 +43,23 @@
         return false;
     };
 
-    Contacts.prototype.getContactById = function (id) {
+    Contacts.prototype.getContactById = function (id, callback) {
         'use strict';
-        var c;
+        var c, result;
         for (c in this.tabContacts) {
             if (this.tabContacts[c].ident === id) {
-                return this.tabContacts[c];
+                result = this.tabContacts[c];
             }
         }
-        return false;
+        if (!result) {
+            callback('Pas de contact correspondant', null);
+        } else {
+            callback(null, result);
+        }
     };
 
-    Contacts.prototype.getContacts = function () {
-        return this.tabContacts;
+    Contacts.prototype.getContacts = function (callback) {
+        callback(this.tabContacts);
     };
 
     module.exports = Contacts;
