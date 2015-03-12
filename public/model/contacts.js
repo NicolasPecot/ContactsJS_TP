@@ -60,3 +60,13 @@ Contacts.prototype.loadLocalStorage = function () {
         this.addContact(contact);
     }
 };
+Contacts.prototype.getListContacts = function () {
+    var successCallback, errorCallback;
+    successCallback = function (data) {
+        this.tabContacts = data;
+    };
+    errorCallback = function (err) {
+        console.log(err);
+    };
+    getContacts(successCallback, errorCallback);
+};

@@ -14,6 +14,7 @@
         //localStorage.clear();
         $scope.listeContacts = function () {
             var i, contacts = new Contacts();
+            // TODO : changer le chargement depuis le localStorage vers le chargement depuis le serveur
             contacts.loadLocalStorage();
             for (i = 0; i < contacts.tabContacts.length; i += 1) {
                 if (contacts.tabContacts[i].birthdate) {
@@ -21,7 +22,6 @@
                 }
             }
             return contacts;
-            // transformer les chaines de char en Date puis en chaines formatées !!!
         }();
         this.selectTab = function (setTab) {
             $scope.tab = setTab;

@@ -12,12 +12,22 @@
         $http.get('/contacts').success(successCallback).error(errorCallback);
     };
     addContact = function (contact, successCallback, errorCallback) {
-        $http.post('/addcontact').success(successCallback).error(errorCallback);
+        var params = $.param({contact: contact});
+        $http.post('/addcontact?' + params).success(successCallback).error(errorCallback);
     };
     deleteContact = function (contact, successCallback, errorCallback) {
-        $http.get('/deletecontact').success(successCallback).error(errorCallback);
+        var params = $.param({contactId: contact.getIdent()});
+        $http.get('/deletecontact?' + params).success(successCallback).error(errorCallback);
     };
     modifyContact = function (contact, successCallback, errorCallback) {
-        $http.get('modifycontact').success(successCallback).error(errorCallback);
+        var params = $.param({contact: contact});
+        $http.get('modifycontact?' + params).success(successCallback).error(errorCallback);
     };
+
+    return {
+        "getContacts": getContacts,
+        "addContact": addContact,
+        "deleteContact": deleteContact,
+        "modifyContact": modifyContact
+    }
 })();
