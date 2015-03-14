@@ -9,6 +9,7 @@
         contact = require('./model/contact'),
         contacts = require('./model/contacts'),
         configuration = require('./configuration'),
+        logger = require('./configuration_log').logger,
         routes = require('./routes'),
         app = express(),
         server;
@@ -21,5 +22,7 @@
     app.route('/contacts').get(routes.getContacts);
 
     app.route('/getContactById').get(routes.getContactById);
+
+    app.route('/addcontact').get(routes.addContact);
 })();
 

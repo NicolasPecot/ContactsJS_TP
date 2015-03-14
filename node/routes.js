@@ -29,4 +29,11 @@
             };
         contacts.getContactById(req.query.contactId, getContactCallback);
     };
+
+    exports.addcontact = function (req, res) {
+        var addContactCallback = function (err, data) {
+            return err ? res.status(500).send(err) : res.status(200).send(data);
+        };
+        contacts.addContact(req.query.contact, addContactCallback);
+    };
 })();

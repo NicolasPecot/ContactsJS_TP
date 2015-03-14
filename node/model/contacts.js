@@ -3,7 +3,10 @@
  */
 (function () {
 
-    var contact = require('./contact');
+    var contact = require('./contact'),
+        dao = require('../dao/dao');
+
+    // TODO : MODIFIER LES FONCTIONS POUR ENREGISTRER EN BASE DE DONNEES ET RECUPERATION UNE FOIS LA MODIF OK
 
     var Contacts = function (tabcontacts) {
         'use strict';
@@ -12,10 +15,10 @@
 
     Contacts.prototype.constructor = Contacts;
 
-    Contacts.prototype.addContact = function (contact) {
+    Contacts.prototype.addContact = function (contact, callback) {
         'use strict';
         this.tabContacts.push(contact);
-        return this.tabContacts.length;
+        return callback(this.tabContacts.indexOf(contact));
     };
     Contacts.prototype.removeContact = function (contact, callback) {
         'use strict';
