@@ -1,5 +1,5 @@
 /*globals Observable,localStorage,Contact*/
-
+// TODO : changer ou virer les fonctions de management de la liste pour des appels ajax (cf dataExchange.js)
 function Contacts() {
     'use strict';
     this.tabContacts = [];

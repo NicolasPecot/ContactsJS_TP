@@ -4,10 +4,10 @@
 app.controller('ListeController', ['$rootScope', '$scope', function ($rootScope, $scope) {
     this.listeContacts = $scope.listeContacts.tabContacts;
     $scope.filtre = 'nom';
-    $scope.filtrer = function (e) {
-        if (e === 1) {
+    $scope.filtrer = function (filtre) {
+        if (filtre === 1) {
             $scope.filtre = 'nom';
-        } else if (e === 2) {
+        } else if (filtre === 2) {
             $scope.filtre = '-nom';
         }
     };

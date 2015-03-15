@@ -39,7 +39,7 @@ Contact.prototype.setPrenom = function (prenom) {
     this.prenom = prenom;
 };
 Contact.prototype.setTel = function (tel) {
-    var reg = new RegExp('[0-9]*');
+    var reg = new RegExp('^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$');
     if (tel.length === 10 && reg.test(tel)) {
         this.tel = tel;
     }
