@@ -21,7 +21,7 @@
     };
 
     exports.insertContact = function (contact, callback){
-
+        db.Conctacts.insert(contact, callback);
     };
 
     exports.getContacts = function (callback) {

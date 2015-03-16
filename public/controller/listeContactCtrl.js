@@ -11,4 +11,16 @@ app.controller('ListeController', ['$rootScope', '$scope', function ($rootScope,
             $scope.filtre = '-nom';
         }
     };
+
+    $scope.deleteContact = function () {
+
+    };
+
+    $scope.editContact = function () {
+
+    };
+
+    $scope.addPicture = function () {
+
+    };
 }]);
