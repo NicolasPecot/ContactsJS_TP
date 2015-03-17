@@ -19,7 +19,7 @@ app.controller('ListeController', ['$rootScope', '$scope', 'dataExchange', funct
             // recharger la page
         };
         errorDeleteCallback = function (err) {
-
+            // Afficher message d'erreur
         };
         //$rootScope.Contacts.deleteContact($scope.selectedContact);
         de.deleteContact($scope.selectedContact, successDeleteCallback, errorDeleteCallback);
@@ -32,7 +32,7 @@ app.controller('ListeController', ['$rootScope', '$scope', 'dataExchange', funct
             // recharger la page / le contact
         };
         errorEditCallback = function (err) {
-
+            // Afficher message d'erreur
         };
         de.modifyContact($scope.selectedContact, successEditCallback, errorEditCallback);
     };
