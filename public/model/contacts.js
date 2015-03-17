@@ -16,6 +16,7 @@ Contacts.prototype.addContact = function (contact) {
 Contacts.prototype.removeContact = function (contact) {
     'use strict';
     this.notify();
+    // TODO : Appel à dataexchange pour retirer le contact => creation callbacks && rechargement liste ? Suppression pour tout caser dans le controlleur ?
     return this.tabContacts.splice(this.tabContacts.indexOf(contact), 1);
 };
 Contacts.prototype.changeContact = function (contact) {

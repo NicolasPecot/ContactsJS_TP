@@ -10,7 +10,7 @@
         </div>
         <ul class="list-inline">
             <li class=" align-top" ng-repeat="c in listeCtrl.listeContacts | orderBy:listeCtrl.filtre">
-                <div><img src="ressources/Minecraft-steve_12.png" class="img-thumbnail"></div>
+                <div><img ng-src="{{c.getImg()}}" class="img-thumbnail"></div>
                 <h4>{{c.getPrenom()}} {{c.getNom()}}</h4>
                 <div>{{c.getTel() || " "}}</div>
                 <div><a ng-href="mailto:{{c.getEmail()}}">{{c.getEmail() || " "}}</a></div>

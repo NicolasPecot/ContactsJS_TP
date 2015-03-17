@@ -7,6 +7,7 @@ function Contact() {
     this.tel = "";
     this.email = "";
     this.birthdate = "";
+    this.img = "ressources/Minecraft-steve_12.png";
 }
 //Contact.prototype = Object.create(Observable.prototype);
 Contact.prototype.constructor = Contact;
@@ -52,4 +53,11 @@ Contact.prototype.setEmail = function (email) {
 };
 Contact.prototype.setBirthdate = function (birthdate) {
     this.birthdate = birthdate;
+};
+
+Contact.prototype.setImg = function (imgSrc) {
+    this.img = imgSrc;
+};
+Contact.prototype.getImg = function () {
+    return this.img;
 };

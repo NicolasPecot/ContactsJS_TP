@@ -1,8 +1,8 @@
 /**
  * Created by Shadow on 12/03/2015.
  */
-app.controller('ListeController', ['$rootScope', '$scope', function ($rootScope, $scope) {
-    this.listeContacts = $scope.listeContacts.tabContacts;
+app.controller('ListeController', ['$rootScope', '$scope', 'dataExchange', function ($rootScope, $scope, de) {
+    $scope.listeContacts = $scope.listeContacts.tabContacts;
     $scope.filtre = 'nom';
     $scope.filtrer = function (filtre) {
         if (filtre === 1) {
@@ -13,11 +13,28 @@ app.controller('ListeController', ['$rootScope', '$scope', function ($rootScope,
     };
 
     $scope.deleteContact = function () {
+        var successDeleteCallback, errorDeleteCallback;
 
+        successDeleteCallback = function (data) {
+            // recharger la page
+        };
+        errorDeleteCallback = function (err) {
+
+        };
+        //$rootScope.Contacts.deleteContact($scope.selectedContact);
+        de.deleteContact($scope.selectedContact, successDeleteCallback, errorDeleteCallback);
     };
 
     $scope.editContact = function () {
+        var successEditCallback, errorEditCallback;
 
+        successEditCallback = function (data) {
+            // recharger la page / le contact
+        };
+        errorEditCallback = function (err) {
+
+        };
+        de.modifyContact($scope.selectedContact, successEditCallback, errorEditCallback);
     };
 
     $scope.addPicture = function () {

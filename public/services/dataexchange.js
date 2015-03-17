@@ -44,6 +44,7 @@ app.factory('dataExchange', ['$http', '$rootScope', function ($http, $rootScope)
         "getContacts": getContacts,
         "addContact": addContact,
         "deleteContact": deleteContact,
-        "modifyContact": modifyContact
+        "modifyContact": modifyContact,
+        "getContactById": getContactById
     }
 }]);

@@ -15,7 +15,8 @@
             prenom: String,
             tel: String,
             mail: String,
-            birthdate: {type: Date, default: Date.now}
+            birthdate: {type: Date, default: Date.now},
+            img: String
         });
         dbContact = mongoose.model('dbContact', schema);
     };
