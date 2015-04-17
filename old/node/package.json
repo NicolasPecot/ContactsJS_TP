@@ -11,6 +11,8 @@
     "mongoose": "*",
     "async": "*",
     "mocha": "*",
-    "sinon": "*"
+    "sinon": "*",
+    "underscore": "*",
+    "moment": "*"
   }
 }
