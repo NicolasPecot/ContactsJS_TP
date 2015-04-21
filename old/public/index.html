@@ -45,14 +45,16 @@
                 </ul>
             </div>
             <ul class="list-inline">
-            <li class=" align-top" ng-repeat="c in listeCtrl.listeContacts | orderBy:listeCtrl.filtre">
-                <div><img class="add-img-icon" src="ressources/add182_blue.png"><img ng-src="{{c.getImg()}}" class="img-thumbnail"></div>
-                <h4>{{c.getPrenom()}} {{c.getNom()}}</h4>
-                <div class="align-middle"><img class="tel-icon" src="ressources/tel.png" ng-if="c.getTel()"> {{c.getTel() || " "}}</div>
-                <div class="align-middle"><img class="tel-icon" src="ressources/mail.png" ng-if="c.getEmail()"><a ng-href="mailto:{{c.getEmail()}}"> {{c.getEmail() || " "}}</a></div>
-                <div class="align-middle"><img class="tel-icon" src="ressources/birthday.png" ng-if="c.birthDateToggled"> {{"" || c.birthDateToggled}}</div>
-                    <!--c.getBirthdate().getDay().toString() + " / " + (c.getBirthdate().getMonth() + 1).toString() + " / " + c.getBirthdate().getFullYear().toString()}}</div>-->
-            </li>
+                <li class=" align-top" ng-repeat="c in listeCtrl.listeContacts | orderBy:listeCtrl.filtre">
+                    <div class="photo" ng-mouseenter="showAddIcon = true" ng-mouseleave="showAddIcon = false">
+                        <img class="add-img-icon" src="ressources/add182_blue.png" ng-show="showAddIcon" ng-click="">
+                        <img ng-src="{{c.getImg()}}" class="img-thumbnail">
+                    </div>
+                    <h4>{{c.getPrenom()}} {{c.getNom()}}</h4>
+                    <div class="align-middle"><img class="tel-icon" src="ressources/tel.png" ng-if="c.getTel()"> {{c.getTel() || " "}}</div>
+                    <div class="align-middle"><img class="tel-icon" src="ressources/mail.png" ng-if="c.getEmail()"><a ng-href="mailto:{{c.getEmail()}}"> {{c.getEmail() || " "}}</a></div>
+                    <div class="align-middle"><img class="tel-icon" src="ressources/birthday.png" ng-if="c.birthDateToggled"> {{"" || c.birthDateToggled}}</div>
+                </li>
             </ul>
         </div>
     </div>

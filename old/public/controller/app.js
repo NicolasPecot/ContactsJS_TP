@@ -34,6 +34,10 @@
     app.controller('ListeController', function ($scope) {
         this.listeContacts = $scope.listeContacts.tabContacts;
         this.filtre = 'nom';
+        $scope.showAddIcon = false;
+        $scope.showAddButton = function () {
+            $scope.showAddIcon = true;
+        };
         this.filtrer = function (e) {
             if (e === 1) {
                 this.filtre = 'nom';

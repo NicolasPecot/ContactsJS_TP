@@ -11,8 +11,13 @@
 }
 
 .add-img-icon {
+	/*display: none;*/
 	width: 30px;
 	position: absolute;
 	top: 153px;
 	margin-left: 165px;
+	cursor: pointer;
+}
+.add-img-icon:hover {
+	display: block;
 }
