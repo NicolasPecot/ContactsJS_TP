@@ -47,8 +47,8 @@
             <ul class="list-inline">
                 <li class=" align-top" ng-repeat="c in listeCtrl.listeContacts | orderBy:listeCtrl.filtre">
                     <div class="photo" ng-mouseenter="showAddIcon = true" ng-mouseleave="showAddIcon = false">
-                        <img class="add-img-icon" src="ressources/add182_blue.png" ng-show="showAddIcon" ng-click="">
-                        <img class="del-img-icon" src="ressources/cancel_red.png" ng-show="showAddIcon" ng-click="">
+                        <img class="add-img-icon" src="ressources/add.png" ng-show="showAddIcon" ng-click="">
+                        <img class="del-img-icon" src="ressources/cancel.png" ng-show="showAddIcon" ng-click="">
                         <img ng-src="{{c.getImg()}}" class="img-thumbnail">
                     </div>
                     <h4>{{c.getPrenom()}} {{c.getNom()}}</h4>
