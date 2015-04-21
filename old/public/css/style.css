@@ -14,10 +14,17 @@
 	/*display: none;*/
 	width: 30px;
 	position: absolute;
-	top: 153px;
+	margin-top: 5px;
 	margin-left: 165px;
 	cursor: pointer;
 }
 .add-img-icon:hover {
 	display: block;
+}
+.del-img-icon {
+	width: 30px;
+	position: absolute;
+	margin-top: 40px;
+	margin-left: 165px;
+	cursor: pointer;
 }
