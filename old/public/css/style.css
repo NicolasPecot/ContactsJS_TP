@@ -1,3 +1,18 @@
 .align-top {
 	vertical-align: top;
 }
+
+.tel-icon {
+	width: 15px;
+}
+
+.align-middle {
+	vertical-align: middle;
+}
+
+.add-img-icon {
+	width: 30px;
+	position: absolute;
+	top: 153px;
+	margin-left: 165px
+}
