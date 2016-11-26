@@ -3,7 +3,7 @@
  */
 (function () {
 
-    "use strict";
+    'use strict';
 
     var contacts = require('./model/contacts'),
         dao = require('./dao/dao');

@@ -4,20 +4,24 @@
 
 (function () {
 
-    "use strict";
+    'use strict';
 
     var logger = require('../configuration/configuration_log').logger,
         _ = require('underscore'),
         dao = require('../dao/dao');
 
-    var Contacts = function () {
+    var Contacts = function (tabcontacts) {
         this.tabContacts = tabcontacts || [];
     };
 
     Contacts.prototype.constructor = Contacts;
 
-    Contacts.prototype.getContacts = function (contact) {
+    Contacts.prototype.getContacts = function () {
         logger.debug('Contacts.getContacts');
+    };
+
+    Contacts.prototype.setContacts = function (listContacts) {
+       logger.debug('Conctacts.setContacts');
     };
 
     module.exports = Contacts;

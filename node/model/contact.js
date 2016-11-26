@@ -13,20 +13,20 @@
      * Creates a new Contact.
      * @param _id : id from database
      * @param lastname : lastname of the contact (String)
-     * @param firstname : firstnameof the contact (String)
-     * @param tel : telephone number of the contact (String)
+     * @param firstname : firstname of the contact (String)
+     * @param tel : phone number of the contact (String)
      * @param email : email of the contact (String)
      * @param birthdate : birthdate of the contact (String)
      * @constructor
      */
     var Contact = function (_id, lastname, firstname, tel, email, birthdate) {
-        logger.debug("[contact.js] Create new Contact.");
+        logger.debug('[contact.js] Create new Contact.');
         this._id = _id || '';
         this.lastname = lastname || '';
         this.firstname = firstname || '';
         this.tel = tel || '';
         this.email = email || '';
-        this.birthdate = moment(birthdate, "DD-MM-YYYY") || moment();
+        this.birthdate = moment(birthdate, 'DD-MM-YYYY') || moment();
     };
 
     Contact.prototype.constructor = Contact;

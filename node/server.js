@@ -7,7 +7,7 @@
 /* global node, _ */
 
 (function () {
-    "use strict";
+    'use strict';
 
     // Dependances
     var express = require('express'),
