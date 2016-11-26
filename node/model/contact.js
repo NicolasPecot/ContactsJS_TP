@@ -5,9 +5,9 @@
 
     'use strict';
 
-    var logger = require('../configuration/configuration_log').logger,
-        moment = require('moment'),
-        dao = require('../dao/dao');
+    var logger  = require('../configuration/configuration_log').logger,
+        moment  = require('moment'),
+        dao     = require('../dao/dao');
 
     /**
      * Creates a new Contact.
@@ -104,7 +104,7 @@
      */
     Contact.prototype.setTel = function (newTel) {
         var regPhone = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
-        if (!newTel || tel.length !== 10 || !tel.match(regPhone)) {
+        if (!newTel || newTel.length !== 10 || !newTel.match(regPhone)) {
             return -1;
         }
         this.tel = newTel;
@@ -118,7 +118,7 @@
      */
     Contact.prototype.setEmail = function (newEmail) {
         var reg = new RegExp('^[a-z0-9]+([_|\.|-]{1}[a-z0-9]+)*@[a-z0-9]+([_|\.|-]{1}[a-z0-9]+)*[\.]{1}[a-z]{2,6}$', 'i');
-        if (!newEmail || !reg.test(email)) {
+        if (!newEmail || !reg.test(newEmail)) {
             return -1;
         }
         this.email = newEmail;

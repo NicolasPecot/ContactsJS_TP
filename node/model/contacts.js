@@ -17,7 +17,7 @@
     Contacts.prototype.constructor = Contacts;
 
     Contacts.prototype.getContacts = function (contact) {
-
+        logger.debug('Contacts.getContacts');
     };
 
     module.exports = Contacts;
