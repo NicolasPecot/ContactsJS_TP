@@ -7,6 +7,6 @@ node_js:
  # - sh -e /etc/init.d/xvfb start
 script:
   - "echo 'done'"
-  - node_modules/karma/bin/karma start my.conf.js --single-run
+#  - node_modules/karma/bin/karma start my.conf.js --single-run
 before_script:
   - npm install
