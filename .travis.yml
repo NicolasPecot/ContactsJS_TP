@@ -1,0 +1,12 @@
+sudo: required
+language: node_js
+node_js:
+  - "5.7.0"
+before_install:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+script:
+  - "echo 'done'"
+  - node_modules/karma/bin/karma start my.conf.js --single-run
+before_script:
+  -npm install
