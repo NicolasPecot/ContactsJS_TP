@@ -1,6 +1,3 @@
-/**
- * Created by Shadow on 22/04/2015.
- */
 (function () {
 
     'use strict';

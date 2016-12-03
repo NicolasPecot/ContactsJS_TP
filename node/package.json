@@ -3,17 +3,27 @@
   "version": "0.0.1",
   "description": "A little webapp to manage contacts.",
   "author": "Nicolas Pecot <nicolas.pecot@gmail.com>",
-  "repository": {"type": "git", "url": "git@github.com:NicolasPecot/ContactsJS_TP.git"},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:NicolasPecot/ContactsJS_TP.git"
+  },
   "main": "server.js",
   "dependencies": {
-    "express": "*",
-    "winston": "*",
-    "mongoose": "*",
-    "async": "*",
-    "underscore": "*",
-    "moment": "*"
+    "async": "^2.1.4",
+    "hapi": "^16.0.1",
+    "moment": "^2.17.0",
+    "mongoose": "^4.7.1",
+    "underscore": "^1.8.3",
+    "winston": "^2.3.0"
   },
   "devDependencies": {
-    "jsDoc": "*"
-  }
+    "chai": "^3.5.0",
+    "jsdoc": "^3.4.3",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "license": "ISC"
 }

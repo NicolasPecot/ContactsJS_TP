@@ -1,7 +1,4 @@
 /**
- * Created by Shadow on 18/04/2015.
- */
-/**
  * Server file
  */
 /* global node, _ */
@@ -10,7 +7,7 @@
     'use strict';
 
     // Dependances
-    var express = require('express'),
+    var hapi = require('hapi'),
         fs = require('fs'),
         app = express(),
         configuration = require('./configuration/configuration'),
