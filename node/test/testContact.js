@@ -2,17 +2,24 @@
     'use strict';
 
     var expect  = require('chai').expect;
-    var contact = require('../model/contact');
+    var Contact = require('../model/contact');
 
-    describe('Unit test test', function() {
-        it('is a test', function() {
-            expect(1+1).to.equal(2);
-        });
-    });
+    var contactForTest;
 
     describe('Test Contact', function() {
         describe('Tests getters', function() {
-
+            describe('Tests LastName', function() {
+                it('Test lastname on empty init object', function() {
+                    contactForTest = new Contact();
+                    var lastname = contactForTest.getLastname();
+                    expect(lastname).to.equal('');
+                });
+                it('Test lastname on defined init object', function() {
+                    contactForTest = new Contact('', 'Dupond');
+                    var lastname = contactForTest.getLastname();
+                    expect(lastname).to.equal('Dupond');
+                });
+            });
         });
     });
 })();
