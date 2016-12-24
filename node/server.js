@@ -7,16 +7,15 @@
     'use strict';
 
     // Dependances
-    var hapi = require('hapi'),
+    var Hapi = require('hapi'),
         fs = require('fs'),
-        app = express(),
         configuration = require('./configuration/configuration'),
         contacts,
         server;
 
     if (configuration.appHost) {
-        server = app.listen(configuration.appPort, configuration.appHost);
+        server = new Hapi().Server(configuration.appHost, configuration.appPort);
     } else {
-        server = app.listen(configuration.appPort);
+        server = new Hapi().Server(configuration.appPort);
     }
 })();
